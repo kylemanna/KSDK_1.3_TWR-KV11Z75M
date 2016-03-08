@@ -56,6 +56,7 @@ void lptmr_call_back(void)
 {
     // Toggle LED1
     LED1_TOGGLE;
+    LED2_TOGGLE;
 }
 
 /*!
@@ -94,6 +95,8 @@ int main (void)
 
     // Initialize LED1
     LED1_EN;
+    LED2_EN;
+    LED2_TOGGLE;
 
     // Print the initial banner
     PRINTF("\r\nHello World!\r\n\r\n");
