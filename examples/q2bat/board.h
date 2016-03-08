@@ -36,7 +36,7 @@
 #include "gpio_pins.h"
 
 /* The board name */
-#define BOARD_NAME                      "TWR-KV11Z75M"
+#define BOARD_NAME                      "Q2BAT-KV11Z75M"
 
 #define CLOCK_VLPR                      1U
 #define CLOCK_RUN                       2U
@@ -47,7 +47,7 @@
 #endif
 
 /* OSC0 configuration. */
-#define OSC0_XTAL_FREQ                  10000000U
+#define OSC0_XTAL_FREQ                  16000000U
 #define OSC0_SC2P_ENABLE_CONFIG         false
 #define OSC0_SC4P_ENABLE_CONFIG         false
 #define OSC0_SC8P_ENABLE_CONFIG         false
@@ -67,7 +67,7 @@
 #define XTAL0_PINMUX                    kPortPinDisabled
 
 /* Defined clock for board */
-#define BOARD_XTAL0_CLK_FREQUENCY       10000000U;
+#define BOARD_XTAL0_CLK_FREQUENCY       16000000U;
 /* The UART to use for debug messages. */
 #ifndef BOARD_DEBUG_UART_INSTANCE
     #define BOARD_DEBUG_UART_INSTANCE   0
