@@ -59,42 +59,20 @@
 
 void configure_can_pins(uint32_t instance)
 {
-  /* Affects PORTE_PCR24 register */
-  PORT_HAL_SetMuxMode(PORTE,24u,kPortMuxAlt2);
-  /* Affects PORTE_PCR25 register */
-  PORT_HAL_SetMuxMode(PORTE,25u,kPortMuxAlt2);
+  /* Affects PORTE_PCR16 register */
+  PORT_HAL_SetMuxMode(PORTB,16u,kPortMuxAlt5);
+  /* Affects PORTE_PCR17 register */
+  PORT_HAL_SetMuxMode(PORTB,17u,kPortMuxAlt5);
 }
 
 void configure_ftm_pins(uint32_t instance)
 {
   switch(instance) {
     case FTM0_IDX:                       /* FTM0 */
-      /* Affects PORTC_PCR1 register */
-      PORT_HAL_SetMuxMode(PORTC,1u,kPortMuxAlt4);
-      /* Affects PORTC_PCR2 register */
-      PORT_HAL_SetMuxMode(PORTC,2u,kPortMuxAlt4);
-      /* Affects PORTE_PCR2 register */
-      PORT_HAL_SetMuxMode(PORTE,25u,kPortMuxAlt3);
-      /* Affects PORTC_PCR3 register */
-      PORT_HAL_SetMuxMode(PORTC,3u,kPortMuxAlt4);
-      /* Affects PORTC_PCR4 register */
-      PORT_HAL_SetMuxMode(PORTC,4u,kPortMuxAlt4);
-      /* Affects PORTD_PCR4 register */
-      PORT_HAL_SetMuxMode(PORTD,4u,kPortMuxAlt4);
-      /* Affects PORTD_PCR5 register */
-      PORT_HAL_SetMuxMode(PORTD,5u,kPortMuxAlt4);
       break;
     case FTM1_IDX:                       /* FTM1 */
-      /* Affects PORTD_PCR6 register */
-      PORT_HAL_SetMuxMode(PORTD,6u,kPortMuxAlt5);
-      /* Affects PORTD_PCR7 register */
-      PORT_HAL_SetMuxMode(PORTD,7u,kPortMuxAlt5);
       break;
     case FTM2_IDX:                       /* FTM2 */
-      /* Affects PORTA_PCR1 register */
-      PORT_HAL_SetMuxMode(PORTA,1u,kPortMuxAlt3);
-      /* Affects PORTA_PCR2 register */
-      PORT_HAL_SetMuxMode(PORTA,2u,kPortMuxAlt3);
       break;
     default:
       break;
@@ -105,53 +83,27 @@ void configure_gpio_pins(uint32_t instance)
 {
   switch(instance) {
     case PORTA_IDX:                      /* PORTA_IDX */
-      /* Affects PORTA_PCR2 register */
-      PORT_HAL_SetMuxMode(PORTA,2u,kPortMuxAsGpio);
       /* Affects PORTA_PCR4 register */
       PORT_HAL_SetMuxMode(PORTA,4u,kPortMuxAsGpio);
       break;
     case PORTB_IDX:                      /* PORTB_IDX */
-      /* Affects PORTB_PCR0 register */
-      PORT_HAL_SetMuxMode(PORTB,0u,kPortMuxAsGpio);
-      /* Affects PORTB_PCR3 register */
-      PORT_HAL_SetMuxMode(PORTB,3u,kPortMuxAsGpio);
       break;
     case PORTC_IDX:                      /* PORTC_IDX */
-      /* Affects PORTC_PCR1 register */
-      PORT_HAL_SetDriveStrengthMode(PORTC,1u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTC,1u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTC,1u,kPortSlowSlewRate);
-      /* Affects PORTC_PCR3 register */
-      PORT_HAL_SetDriveStrengthMode(PORTC,3u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTC,3u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTC,3u,kPortSlowSlewRate);
-      /* Affects PORTC_PCR4 register */
-      PORT_HAL_SetDriveStrengthMode(PORTC,4u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTC,4u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTC,4u,kPortSlowSlewRate);
+      /* Affects PORTC_PCR7 register */
+      PORT_HAL_SetDriveStrengthMode(PORTC,7u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTC,7u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTC,7u,kPortSlowSlewRate);
       break;
     case PORTD_IDX:                      /* PORTD_IDX */
       /* Affects PORTD_PCR4 register */
-      PORT_HAL_SetDriveStrengthMode(PORTD,4u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTD,4u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTD,4u,kPortSlowSlewRate);
+      PORT_HAL_SetDriveStrengthMode(PORTD,0u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTD,0u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTD,0u,kPortSlowSlewRate);
       /* Affects PORTD_PCR5 register */
-      PORT_HAL_SetDriveStrengthMode(PORTD,5u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTD,5u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTD,5u,kPortSlowSlewRate);
-      /* Affects PORTD_PCR6 register */
-      PORT_HAL_SetDriveStrengthMode(PORTD,6u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTD,6u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTD,6u,kPortSlowSlewRate);
-      /* Affects PORTD_PCR7 register */
-      PORT_HAL_SetDriveStrengthMode(PORTD,7u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTD,7u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTD,7u,kPortSlowSlewRate);
+      PORT_HAL_SetDriveStrengthMode(PORTD,1u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTD,1u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTD,1u,kPortSlowSlewRate);
     case PORTE_IDX:                      /* PORTE_IDX */
-      /* Affects PORTE_PCR25 register */
-      PORT_HAL_SetDriveStrengthMode(PORTE,25u,kPortLowDriveStrength);
-      PORT_HAL_SetMuxMode(PORTE,25u,kPortMuxAsGpio);
-      PORT_HAL_SetSlewRateMode(PORTE,25u,kPortSlowSlewRate);
       break;
     default:
       break;
@@ -162,16 +114,6 @@ void configure_i2c_pins(uint32_t instance)
 {
   switch(instance) {
     case I2C0_IDX:                       /* I2C0 */
-      /* Affects PORTC_PCR6 register */
-      PORT_HAL_SetMuxMode(PORTC,6u,kPortMuxAlt7);
-      PORT_HAL_SetPullCmd(PORTC, 6u, true);
-      PORT_HAL_SetPullMode(PORTC, 6u, kPortPullUp);
-      PORT_HAL_SetPassiveFilterCmd(PORTC, 6u, false);
-      /* Affects PORTC_PCR7 register */
-      PORT_HAL_SetMuxMode(PORTC,7u,kPortMuxAlt7);
-      PORT_HAL_SetPullCmd(PORTC, 7u, true);
-      PORT_HAL_SetPullMode(PORTC, 7u, kPortPullUp);
-      PORT_HAL_SetPassiveFilterCmd(PORTC, 7u, false);
       break;
     default:
       break;
@@ -182,14 +124,6 @@ void configure_spi_pins(uint32_t instance)
 {
   switch(instance) {
     case SPI0_IDX:                       /* SPI0 */
-      /* Affects PORTD_PCR2 register */
-      PORT_HAL_SetMuxMode(PORTD,2u,kPortMuxAlt2);
-      /* Affects PORTD_PCR3 register */
-      PORT_HAL_SetMuxMode(PORTD,3u,kPortMuxAlt2);
-      /* Affects PORTC_PCR5 register */
-      PORT_HAL_SetMuxMode(PORTC,5u,kPortMuxAlt2);
-      /* Affects PORTC_PCR0 register */
-      PORT_HAL_SetMuxMode(PORTC,0u,kPortMuxAlt7);
       break;
     default:
       break;
@@ -200,16 +134,12 @@ void configure_uart_pins(uint32_t instance)
 {
   switch(instance) {
     case UART0_IDX:                      /* UART0 */
-      /* Affects PORTB_PCR16 register */
-      PORT_HAL_SetMuxMode(PORTB,16u,kPortMuxAlt3);
-      /* Affects PORTB_PCR17 register */
-      PORT_HAL_SetMuxMode(PORTB,17u,kPortMuxAlt3);
+      /* Affects PORTA_PCR1 register */
+      PORT_HAL_SetMuxMode(PORTA,1u,kPortMuxAlt2);
+      /* Affects PORTA_PCR2 register */
+      PORT_HAL_SetMuxMode(PORTA,2u,kPortMuxAlt2);
       break;
     case UART1_IDX:                      /* UART1 */
-      /* Affects PORTE_PCR0 register */
-      PORT_HAL_SetMuxMode(PORTE,0u,kPortMuxAlt3);
-      /* Affects PORTE_PCR1 register */
-      PORT_HAL_SetMuxMode(PORTE,1u,kPortMuxAlt3);
       break;
     default:
       break;

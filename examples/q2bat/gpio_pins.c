@@ -67,13 +67,6 @@ gpio_input_pin_user_config_t switchPins[] = {
     .config.interrupt = kPortIntDisabled
   },
   {
-    .pinName = kGpioSW3,
-    .config.isPullEnable = true,
-    .config.pullSelect = kPortPullUp,
-    .config.isPassiveFilterEnabled = false,
-    .config.interrupt = kPortIntDisabled
-  },
-  {
     .pinName = GPIO_PINS_OUT_OF_RANGE,
   }
 };
@@ -87,42 +80,6 @@ const gpio_output_pin_user_config_t ledPins[] = {
   },
   {
     .pinName = kGpioLED2,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-  {
-    .pinName = kGpioLED3,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-  {
-    .pinName = kGpioLED4,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-    {
-    .pinName = kGpioLED5,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-  {
-    .pinName = kGpioLED6,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-  {
-    .pinName = kGpioLED7,
-    .config.outputLogic = 1,
-    .config.slewRate = kPortSlowSlewRate,
-    .config.driveStrength = kPortLowDriveStrength,
-  },
-  {
-    .pinName = kGpioLED8,
     .config.outputLogic = 1,
     .config.slewRate = kPortSlowSlewRate,
     .config.driveStrength = kPortLowDriveStrength,
