@@ -67,7 +67,7 @@
 #define XTAL0_PINMUX                    kPortPinDisabled
 
 /* Defined clock for board */
-#define BOARD_XTAL0_CLK_FREQUENCY       16000000U;
+//#define BOARD_XTAL0_CLK_FREQUENCY       16000000U;
 /* The UART to use for debug messages. */
 #ifndef BOARD_DEBUG_UART_INSTANCE
     #define BOARD_DEBUG_UART_INSTANCE   0

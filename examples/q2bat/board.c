@@ -75,7 +75,7 @@ const clock_manager_user_config_t g_defaultClockConfigRun =
         .ircs               = kMcgIrcSlow, // Select IRC32k.
         .fcrdiv             = 0U,    // FCRDIV is 0.
 
-        .frdiv   = 3U,
+        .frdiv   = 4U,                      // 16 MHz -> 31.25 kilohertz
         .drs     = kMcgDcoRangeSelMidHigh,  // Mid high frequency range
         .dmx32   = kMcgDmx32Default,        // DCO has a default range of 25%
     },
@@ -83,7 +83,7 @@ const clock_manager_user_config_t g_defaultClockConfigRun =
     {
         .er32kSrc  = kClockEr32kSrcLpo,     // ERCLK32K selection, use LPO.
         .outdiv1   = 0U,
-        .outdiv4   = 2U,
+        .outdiv4   = 4U,
         .outdiv5   = 0U,
         .outdiv5Enable = false,
     },
