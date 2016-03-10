@@ -40,6 +40,7 @@ void hardware_init(void) {
   CLOCK_SYS_EnablePortClock(PORTB_IDX);
   CLOCK_SYS_EnablePortClock(PORTC_IDX);
   CLOCK_SYS_EnablePortClock(PORTD_IDX);
+  CLOCK_SYS_EnablePortClock(PORTE_IDX);
 
   /* Init board clock */
   BOARD_ClockInit();
@@ -50,6 +51,9 @@ void hardware_init(void) {
   configure_gpio_pins(PORTB_IDX);
   configure_gpio_pins(PORTC_IDX);
   configure_gpio_pins(PORTD_IDX);
+  configure_gpio_pins(PORTE_IDX);
+
+  configure_dac_pins(0U);
 
   /* CAN_EN is a output */
   GPIO_DRV_OutputPinInit(&miscPins[0]);

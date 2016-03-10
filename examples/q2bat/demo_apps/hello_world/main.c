@@ -35,6 +35,7 @@
 #include "board.h"
 #include "fsl_lptmr_driver.h"
 #include "fsl_debug_console.h"
+#include "fsl_dac_driver.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Definitions
@@ -44,6 +45,8 @@
 #if defined(TWR_KV46F150M)
 #define LPTMR0_IDX LPTMR_IDX
 #endif
+
+#define DAC_INSTANCE          BOARD_DAC_DEMO_DAC_INSTANCE
 
 ////////////////////////////////////////////////////////////////////////////////
 // Code
@@ -106,6 +109,14 @@ int main (void)
 
     // Print the initial banner
     PRINTF("\r\nHello World!\r\n\r\n");
+
+    dac_converter_config_t dacUserConfig;
+    // Fill the structure with configuration of software trigger.
+    DAC_DRV_StructInitUserConfigNormal(&dacUserConfig);
+    // Initialize the DAC Converter.
+    DAC_DRV_Init(DAC_INSTANCE, &dacUserConfig);
+    DAC_DRV_Output(DAC_INSTANCE, (uint16_t)0xff);
+
 
     while(1)
     {
