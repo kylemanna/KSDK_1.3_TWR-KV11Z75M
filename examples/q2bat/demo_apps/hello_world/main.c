@@ -57,6 +57,9 @@ void lptmr_call_back(void)
     // Toggle LED1
     LED1_TOGGLE;
     LED2_TOGGLE;
+
+    // Spam the UART
+    PRINTF("\r\ntimer\r\n");
 }
 
 /*!
