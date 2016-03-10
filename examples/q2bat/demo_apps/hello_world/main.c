@@ -101,6 +101,9 @@ int main (void)
     LED2_EN;
     LED2_TOGGLE;
 
+    // Turn CAN transceiver off
+    GPIO_DRV_WritePinOutput(GPIO_MAKE_PIN(GPIOC_IDX, 5U), 1);
+
     // Print the initial banner
     PRINTF("\r\nHello World!\r\n\r\n");
 

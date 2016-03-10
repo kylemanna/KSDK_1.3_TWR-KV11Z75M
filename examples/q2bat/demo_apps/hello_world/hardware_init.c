@@ -38,10 +38,24 @@ void hardware_init(void) {
   /* enable clock for PORTs */
   CLOCK_SYS_EnablePortClock(PORTA_IDX);
   CLOCK_SYS_EnablePortClock(PORTB_IDX);
+  CLOCK_SYS_EnablePortClock(PORTC_IDX);
+  CLOCK_SYS_EnablePortClock(PORTD_IDX);
 
   /* Init board clock */
   BOARD_ClockInit();
   dbg_uart_init();
+
+  /* Hack on additional board init */
+  configure_gpio_pins(PORTA_IDX);
+  configure_gpio_pins(PORTB_IDX);
+  configure_gpio_pins(PORTC_IDX);
+  configure_gpio_pins(PORTD_IDX);
+
+  /* CAN_EN is a output */
+  GPIO_DRV_OutputPinInit(&miscPins[0]);
+  GPIO_DRV_OutputPinInit(&miscPins[1]);
+  GPIO_DRV_OutputPinInit(&miscPins[2]);
+  GPIO_DRV_OutputPinInit(&miscPins[3]);
 }
 
 /*!

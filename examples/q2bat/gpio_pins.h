@@ -65,12 +65,19 @@ extern gpio_input_pin_user_config_t switchPins[];
 /*! @brief Configuration structure 0 for output pins */
 extern const gpio_output_pin_user_config_t ledPins[];
 
+/*! @brief Configuration structure 0 for misc pins */
+extern gpio_output_pin_user_config_t miscPins[];
+
 /*! @brief Pin names */
 enum _gpio_pins_pinNames{
   kGpioSW2  = GPIO_MAKE_PIN(GPIOA_IDX, 4U),
   kGpioLED1 = GPIO_MAKE_PIN(GPIOD_IDX, 0U),
   kGpioLED2 = GPIO_MAKE_PIN(GPIOD_IDX, 1U),
   kGpioLED3 = GPIO_MAKE_PIN(GPIOC_IDX, 7U),
+  kGpioCanEn = GPIO_MAKE_PIN(GPIOC_IDX, 5U),
+  kGpioCanWake = GPIO_MAKE_PIN(GPIOC_IDX, 0U),
+  kGpioBatEn = GPIO_MAKE_PIN(GPIOD_IDX, 6U),
+  kGpioBatEmerg = GPIO_MAKE_PIN(GPIOD_IDX, 7U),
 };
 
 #endif

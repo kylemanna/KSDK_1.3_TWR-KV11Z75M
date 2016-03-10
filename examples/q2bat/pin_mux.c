@@ -89,6 +89,11 @@ void configure_gpio_pins(uint32_t instance)
     case PORTB_IDX:                      /* PORTB_IDX */
       break;
     case PORTC_IDX:                      /* PORTC_IDX */
+      /* Affects PORTC_PCR5 register */
+      PORT_HAL_SetDriveStrengthMode(PORTC,5u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTC,5u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTC,5u,kPortSlowSlewRate);
+
       /* Affects PORTC_PCR7 register */
       PORT_HAL_SetDriveStrengthMode(PORTC,7u,kPortLowDriveStrength);
       PORT_HAL_SetMuxMode(PORTC,7u,kPortMuxAsGpio);
@@ -103,6 +108,14 @@ void configure_gpio_pins(uint32_t instance)
       PORT_HAL_SetDriveStrengthMode(PORTD,1u,kPortLowDriveStrength);
       PORT_HAL_SetMuxMode(PORTD,1u,kPortMuxAsGpio);
       PORT_HAL_SetSlewRateMode(PORTD,1u,kPortSlowSlewRate);
+      /* Affects PORTD_PCR6 register */
+      PORT_HAL_SetDriveStrengthMode(PORTD,6u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTD,6u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTD,6u,kPortSlowSlewRate);
+      /* Affects PORTD_PCR7 register */
+      PORT_HAL_SetDriveStrengthMode(PORTD,7u,kPortLowDriveStrength);
+      PORT_HAL_SetMuxMode(PORTD,7u,kPortMuxAsGpio);
+      PORT_HAL_SetSlewRateMode(PORTD,7u,kPortSlowSlewRate);
     case PORTE_IDX:                      /* PORTE_IDX */
       break;
     default:
