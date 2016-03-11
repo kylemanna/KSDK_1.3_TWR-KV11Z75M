@@ -91,6 +91,7 @@ ADD_EXECUTABLE(hello_world
     "${ProjDirPath}/../../../../../platform/devices/MKV11Z7/startup/gcc/startup_MKV11Z7.S"
     "${ProjDirPath}/../main.c"
     "${ProjDirPath}/../fsl_lptmr_irq.c"
+    "${ProjDirPath}/../fsl_flexcan_irq.c"
     "${ProjDirPath}/../hardware_init.c"
     "${ProjDirPath}/../../../gpio_pins.c"
     "${ProjDirPath}/../../../gpio_pins.h"

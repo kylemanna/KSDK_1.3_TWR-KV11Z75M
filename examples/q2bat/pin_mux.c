@@ -87,6 +87,8 @@ void configure_gpio_pins(uint32_t instance)
       PORT_HAL_SetMuxMode(PORTA,4u,kPortMuxAsGpio);
       break;
     case PORTB_IDX:                      /* PORTB_IDX */
+      PORT_HAL_SetMuxMode(PORTB,16u,kPortMuxAlt5);
+      PORT_HAL_SetMuxMode(PORTB,17u,kPortMuxAlt5);
       break;
     case PORTC_IDX:                      /* PORTC_IDX */
       /* Affects PORTC_PCR5 register */
