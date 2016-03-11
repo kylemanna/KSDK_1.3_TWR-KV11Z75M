@@ -122,6 +122,12 @@ gpio_output_pin_user_config_t miscPins[] = {
     .config.driveStrength = kPortLowDriveStrength,
   },
   {
+    .pinName = kGpioCanRs,
+    .config.outputLogic = 0,
+    .config.slewRate = kPortSlowSlewRate,
+    .config.driveStrength = kPortLowDriveStrength,
+  },
+  {
     .pinName = GPIO_PINS_OUT_OF_RANGE,
   }
 };

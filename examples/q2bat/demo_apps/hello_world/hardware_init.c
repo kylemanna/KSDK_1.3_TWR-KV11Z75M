@@ -60,6 +60,7 @@ void hardware_init(void) {
   GPIO_DRV_OutputPinInit(&miscPins[1]);
   GPIO_DRV_OutputPinInit(&miscPins[2]);
   GPIO_DRV_OutputPinInit(&miscPins[3]);
+  GPIO_DRV_OutputPinInit(&miscPins[4]);
 }
 
 /*!

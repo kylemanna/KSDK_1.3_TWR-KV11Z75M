@@ -78,6 +78,7 @@ enum _gpio_pins_pinNames{
   kGpioCanWake = GPIO_MAKE_PIN(GPIOC_IDX, 0U),
   kGpioBatEn = GPIO_MAKE_PIN(GPIOD_IDX, 6U),
   kGpioBatEmerg = GPIO_MAKE_PIN(GPIOD_IDX, 7U),
+  kGpioCanRs = GPIO_MAKE_PIN(GPIOD_IDX, 3U),
 };
 
 #endif
