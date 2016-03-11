@@ -117,6 +117,20 @@ int main (void)
     DAC_DRV_Init(DAC_INSTANCE, &dacUserConfig);
     DAC_DRV_Output(DAC_INSTANCE, (uint16_t)0xff);
 
+#if 0
+    // Leave disabled by default as the output pin is in use for battery
+    // balancing and will discharge the battery
+    //
+    // CLKOUT
+    PORT_HAL_SetDriveStrengthMode(PORTC,3u,kPortLowDriveStrength);
+    PORT_HAL_SetMuxMode(PORTC,3u,kPortMuxAlt5);
+    PORT_HAL_SetSlewRateMode(PORTC,3u,kPortFastSlewRate);
+
+    //SIM_WR_SOPT2_CLKOUTSEL(SIM, 0x2); // BUSCLK
+    //SIM_WR_SOPT2_CLKOUTSEL(SIM, 0x3); // LPO 1kHz
+    //SIM_WR_SOPT2_CLKOUTSEL(SIM, 0x4); // MCGIRCLK
+    SIM_WR_SOPT2_CLKOUTSEL(SIM, 0x6); // OSCERCLK
+#endif
 
     while(1)
     {
