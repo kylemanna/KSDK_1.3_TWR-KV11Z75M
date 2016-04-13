@@ -32,6 +32,9 @@
     <board id="TWR_KV11Z75M" name="twrkv11z75m" package="MKV11Z128VLH7" user_name="TWR-KV11Z75M">
       <source value="examples/twrkv11z75m/*.c"/>
       <source value="examples/twrkv11z75m/*.h"/>
+    <board id="FRDM_K22F" name="frdmk22f" package="MK22FN512VLH12" user_name="FRDM-K22F">
+      <source value="examples/frdmk22f/*.c"/>
+      <source value="examples/frdmk22f/*.h"/>
     </board>
   </boards>
   <devices>
@@ -41,6 +44,13 @@
       <package name="MKV11Z128VLC7"/>
       <package name="MKV11Z128VLF7"/>
       <package name="MKV11Z128VLH7"/>
+    <device full_name="MK22FN512xxx12" name="MK22F51212">
+      <core fpu="true" name="cm4"/>
+      <package name="MK22FN512CAP12"/>
+      <package name="MK22FN512VDC12"/>
+      <package name="MK22FN512VLH12"/>
+      <package name="MK22FN512VLL12"/>
+      <package name="MK22FN512VMP12"/>
     </device>
   </devices>
   <components for="KSDK 1.3.0" id="KSDK130">
